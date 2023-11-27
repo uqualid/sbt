@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    url: jdbc:mysql://localhost:3306/GDSC?serverTimezone=Asia/Seoul
+    password: '0000'
+  jpa:
+    properties:
+      hibernate:
+        dialect:
+          nodeValue: org.hibernate.dialect.MySQL8Dialect
+          storage_engine: innodb
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: create
