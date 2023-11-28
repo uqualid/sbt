@@ -1,9 +1,6 @@
 package gdsctuk.sbbasic.sptingbootstudybasic.controller;
 
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardRequestDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseIdDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseListDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.*;
 import gdsctuk.sbbasic.sptingbootstudybasic.mapper.BoardMapper;
 import gdsctuk.sbbasic.sptingbootstudybasic.service.BoardService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +15,7 @@ public class BoardController {
     private final BoardService boardService;
     private final BoardMapper boardMapper;
 
-    @PostMapping("/create")
+    @PostMapping(value = "/create")
     public ResponseEntity<BoardResponseIdDto> createBoard(@RequestBody BoardRequestDto request){
         return ResponseEntity.ok(boardService.createBoard(request));
 
@@ -34,16 +31,14 @@ public class BoardController {
         return ResponseEntity.ok(boardService.findOneBoard(id));
     }
 
-
     @PutMapping("/update/{id}")
-    public ResponseEntity<BoardResponseDto> updateBoard(@PathVariable Long id, @RequestBody BoardRequestDto request) {
-        return ResponseEntity.ok(boardService.updateBoard(id, request));
+    public ResponseEntity<BoardResponseDto> updateBoard(@RequestBody BoardUpdateDto request) {
+        return ResponseEntity.ok(boardService.updateBoard(request));
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<BoardResponseDto> deleteBoard(@PathVariable Long id) {
         return ResponseEntity.ok(boardService.deleteBoard(id));
     }
-
 
 }

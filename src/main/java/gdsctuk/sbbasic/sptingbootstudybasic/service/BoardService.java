@@ -1,9 +1,6 @@
 package gdsctuk.sbbasic.sptingbootstudybasic.service;
 
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardRequestDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseIdDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseListDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.*;
 import gdsctuk.sbbasic.sptingbootstudybasic.entity.Board;
 import gdsctuk.sbbasic.sptingbootstudybasic.mapper.BoardMapper;
 import gdsctuk.sbbasic.sptingbootstudybasic.repository.BoardRepository;
@@ -47,16 +44,14 @@ public class BoardService {
 
     // 게시글 수정
     @Transactional
-    public BoardResponseDto updateBoard(Long id, BoardRequestDto request) {
+    public BoardResponseDto updateBoard(BoardUpdateDto request) {
         Board board = boardRepository.findById(request.getBoardId())
                 .orElseThrow(IllegalStateException::new);
 
-        board.setBoardTitle(request.getBoardTitle());
-        board.setBoardContent(request.getBoardContent());
+        board.updateBoard(request.getBoardTitle(), request.getBoardContent());
 
         return boardMapper.toResponse(board);
     }
-
 
 
     // 게시글 삭제

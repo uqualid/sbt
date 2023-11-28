@@ -54,8 +54,8 @@ public class Board {
         this.boardEditTime = boardEditTime;
     }
 
-    public void updateBoard(Long boardId) {
-        this.boardId = boardId;
+    public void updateBoard(String boardTitle, String boardContent) {
+        //this.boardId = boardId;
         this.boardTitle = boardTitle;
         this.boardContent = boardContent;
     }
