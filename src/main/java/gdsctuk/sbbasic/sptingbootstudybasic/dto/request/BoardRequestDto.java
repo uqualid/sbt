@@ -1,4 +1,4 @@
-package gdsctuk.sbbasic.sptingbootstudybasic.dto;
+package gdsctuk.sbbasic.sptingbootstudybasic.dto.request;
 
 
 import lombok.*;
@@ -8,10 +8,11 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class BoardUpdateDto{
-    private Long boardId;
+public class BoardRequestDto {
+
     private String boardTitle;
     private String boardContent;
+    private String boardWriter;
 
 }
 

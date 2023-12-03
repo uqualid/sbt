@@ -1,4 +1,4 @@
-package gdsctuk.sbbasic.sptingbootstudybasic.dto;
+package gdsctuk.sbbasic.sptingbootstudybasic.dto.response;
 
 
 import lombok.AllArgsConstructor;

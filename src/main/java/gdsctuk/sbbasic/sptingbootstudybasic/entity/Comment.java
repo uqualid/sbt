@@ -20,13 +20,14 @@ import java.time.LocalDateTime;
 public class Comment {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
     private Long commentId;
 
-    //@ManyToOne
-    //@JoinColumn(name = "boardId")
-    @Column(nullable = false, updatable = false)
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "boardId")
+    @Column(updatable = false) //nullable = false,
     private Long bId;
 
     @Column(length = 20, nullable = false)
@@ -41,14 +42,26 @@ public class Comment {
     @LastModifiedDate
     private LocalDateTime commentEditTime;
 
+    private Boolean isDeleted; // Null default - soft delete 판별용
+
     @Builder
 
-    public Comment(Long commentId, Long bId, String commentWriter, String commentContent, LocalDateTime commentWriteTime, LocalDateTime commentEditTime) {
+    public Comment(Long commentId, Long bId, String commentWriter, String commentContent,
+                   LocalDateTime commentWriteTime, LocalDateTime commentEditTime) {
         this.commentId = commentId;
         this.bId = bId;
         this.commentWriter = commentWriter;
         this.commentContent = commentContent;
         this.commentWriteTime = commentWriteTime;
         this.commentEditTime = commentEditTime;
+    }
+
+
+    public void updateComment(String commentContent) {
+        this.commentContent = commentContent;
+    }
+
+    public void delete() {
+        this.isDeleted = true;
     }
 }

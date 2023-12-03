@@ -1,6 +1,10 @@
 package gdsctuk.sbbasic.sptingbootstudybasic.controller;
 
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.*;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.request.BoardRequestDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.request.BoardUpdateDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseIdDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseListDto;
 import gdsctuk.sbbasic.sptingbootstudybasic.mapper.BoardMapper;
 import gdsctuk.sbbasic.sptingbootstudybasic.service.BoardService;
 import lombok.RequiredArgsConstructor;

@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @Table(name = "Board")
 public class Board {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, updatable = false)
     //@OneToMany(mappedBy = "bId", cascade = CascadeType.ALL)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
     private Long boardId;
 
     @Column(length = 40, nullable = false)

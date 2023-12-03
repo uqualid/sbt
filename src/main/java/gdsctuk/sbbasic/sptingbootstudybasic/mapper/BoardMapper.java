@@ -1,10 +1,10 @@
 package gdsctuk.sbbasic.sptingbootstudybasic.mapper;
 
 
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardRequestDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseIdDto;
-import gdsctuk.sbbasic.sptingbootstudybasic.dto.BoardResponseListDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.request.BoardRequestDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseIdDto;
+import gdsctuk.sbbasic.sptingbootstudybasic.dto.response.BoardResponseListDto;
 import gdsctuk.sbbasic.sptingbootstudybasic.entity.Board;
 import org.springframework.stereotype.Component;
 

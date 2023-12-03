@@ -1,4 +1,4 @@
-package gdsctuk.sbbasic.sptingbootstudybasic.dto;
+package gdsctuk.sbbasic.sptingbootstudybasic.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class BoardResponseIdDto {
-    private Long id; // id 값을 반환 (Data to Obj)
+public class CommentResponseBIdDto {
+    private Long id; // Board id 값을 반환 (Data to Obj)
 }
